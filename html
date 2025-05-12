@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FNaF Fan Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="hud">
+    <span id="night">Night 1</span>
+    <span id="time">12:00 AM</span>
+    <span id="power">Power: 100%</span>
+  </div>
+
+  <div id="office">
+    <img id="officeBg" src="assets/office.jpg" />
+    <div id="doors">
+      <button onclick="toggle('leftDoor')">Left Door</button>
+      <button onclick="toggle('leftLight')">Left Light</button>
+      <button onclick="toggle('rightLight')">Right Light</button>
+      <button onclick="toggle('rightDoor')">Right Door</button>
+    </div>
+  </div>
+
+  <div id="camera">
+    <h3 id="camName">CAM-1A</h3>
+    <p id="camView">No animatronic detected</p>
+    <div id="camButtons">
+      <button onclick="setCam('CAM-1A')">1A</button>
+      <button onclick="setCam('CAM-1B')">1B</button>
+      <button onclick="setCam('CAM-5')">5</button>
+      <button onclick="setCam('CAM-2A')">2A</button>
+      <button onclick="setCam('CAM-2B')">2B</button>
+    </div>
+  </div>
+
+  <div id="extras">
+    <button onclick="showCustomNight()">Custom Night</button>
+    <button onclick="cheat()">Cheat Mode</button>
+  </div>
+
+  <div id="jumpscare" style="display:none;">
+    <img id="jumpscareImg" />
+    <audio id="jumpscareAudio" autoplay></audio>
+  </div>
+
+  <div id="customNight" style="display:none;">
+    <label>Bonnie AI: <input id="ai-bonnie" type="range" min="0" max="20" value="3" /></label>
+    <label>Chica AI: <input id="ai-chica" type="range" min="0" max="20" value="3" /></label>
+    <label>Freddy AI: <input id="ai-freddy" type="range" min="0" max="20" value="3" /></label>
+    <label>Foxy AI: <input id="ai-foxy" type="range" min="0" max="20" value="3" /></label>
+    <button onclick="startNight()">Start Night</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
